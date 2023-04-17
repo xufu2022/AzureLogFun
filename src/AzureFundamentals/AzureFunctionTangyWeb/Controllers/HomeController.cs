@@ -23,7 +23,7 @@ namespace AzureFunctionTangyWeb.Controllers
             return View();
         }
         [HttpPost]
-        public async Task<IActionResult> Index(SalesRequest salesRequest)
+        public async Task<IActionResult> Index(SalesRequest salesRequest, IFormFile file)
         {
             salesRequest.Id = Guid.NewGuid().ToString();
 
@@ -35,20 +35,20 @@ namespace AzureFunctionTangyWeb.Controllers
                 HttpResponseMessage response = await client.PostAsync("http://localhost:7071/api/OnSalesUploadWriteToQueue", content);
                 string returnValue = response.Content.ReadAsStringAsync().Result;
             }
-            //if (file != null)
-            //{
-            //    var fileName = salesRequest.Id + Path.GetExtension(file.FileName);
-            //    BlobContainerClient blobContainerClient = _blobServiceClient.GetBlobContainerClient("functionsalesrep");
-            //    var blobClient = blobContainerClient.GetBlobClient(fileName);
+            if (file != null)
+            {
+                var fileName = salesRequest.Id + Path.GetExtension(file.FileName);
+                BlobContainerClient blobContainerClient = _blobServiceClient.GetBlobContainerClient("functionsalesrep");
+                var blobClient = blobContainerClient.GetBlobClient(fileName);
 
-            //    var httpHeaders = new BlobHttpHeaders
-            //    {
-            //        ContentType = file.ContentType
-            //    };
+                var httpHeaders = new BlobHttpHeaders
+                {
+                    ContentType = file.ContentType
+                };
 
-            //    await blobClient.UploadAsync(file.OpenReadStream(), httpHeaders);
-            //    return View();
-            //}
+                await blobClient.UploadAsync(file.OpenReadStream(), httpHeaders);
+                return View();
+            }
 
             return RedirectToAction(nameof(Index));
         }
