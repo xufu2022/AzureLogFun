@@ -3,7 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33516.290
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AzureBlobProject", "AzureBlobProject\AzureBlobProject.csproj", "{6EBB54AB-6EFF-4CBE-868E-DFBB0E295286}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AzureBlobProject", "AzureBlobProject\AzureBlobProject.csproj", "{6EBB54AB-6EFF-4CBE-868E-DFBB0E295286}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AzureBlobs", "AzureBlobs", "{9980536C-E0A6-4D72-9066-13E723198D42}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AzureFunctionExamples", "AzureFunctionExamples", "{9CE8D124-9891-477B-81DD-AED9CE3C1A96}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AzureFunctionTangyWeb", "AzureFunctionTangyWeb\AzureFunctionTangyWeb.csproj", "{C097FAA1-B93D-45B0-AD7F-597A9A2899BF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AzureTangyFunc", "AzureTangyFunc\AzureTangyFunc.csproj", "{6C5BCCA1-1F41-4C5A-B6BD-290E46418B6B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,9 +23,22 @@ Global
 		{6EBB54AB-6EFF-4CBE-868E-DFBB0E295286}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6EBB54AB-6EFF-4CBE-868E-DFBB0E295286}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6EBB54AB-6EFF-4CBE-868E-DFBB0E295286}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C097FAA1-B93D-45B0-AD7F-597A9A2899BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C097FAA1-B93D-45B0-AD7F-597A9A2899BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C097FAA1-B93D-45B0-AD7F-597A9A2899BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C097FAA1-B93D-45B0-AD7F-597A9A2899BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C5BCCA1-1F41-4C5A-B6BD-290E46418B6B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C5BCCA1-1F41-4C5A-B6BD-290E46418B6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C5BCCA1-1F41-4C5A-B6BD-290E46418B6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C5BCCA1-1F41-4C5A-B6BD-290E46418B6B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{6EBB54AB-6EFF-4CBE-868E-DFBB0E295286} = {9980536C-E0A6-4D72-9066-13E723198D42}
+		{C097FAA1-B93D-45B0-AD7F-597A9A2899BF} = {9CE8D124-9891-477B-81DD-AED9CE3C1A96}
+		{6C5BCCA1-1F41-4C5A-B6BD-290E46418B6B} = {9CE8D124-9891-477B-81DD-AED9CE3C1A96}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {972EB037-9FBA-4ECA-B084-25374EC9DC83}
